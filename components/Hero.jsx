@@ -46,33 +46,37 @@ export default function Hero() {
   }, [currentWordIndex]);
 
   return (
-    <section className="mx-auto max-w-screen-xl px-4 py-32 lg:h-screen lg:items-center">
-      <h1 className="mb-2 font-title text-xl text-gray-100 sm:text-6xl mt-56 text-center ">
-        A <br className="block md:hidden" />
-        <span
-          id="typewriter"
-          className="relative h-20 pt-2 overflow-x-hidden whitespace-nowrap text-brand-accent"
-        >
-          {/* Placeholder for the typed text */}
-        </span>
-        <br />
-        <span className="h-20 pt-2 overflow-x-hidden whitespace-nowrap text-brand-accent">
-          QR-Code Generator
-        </span>
-      </h1>
-      <div className="mt-10 md:mt-20 flex items-center justify-between ">
-        <div className="bg-white rounded-2xl flex items-center justify-between p-1 space-x-1 w-11/12 sm:w-full mx-auto">
-          <input
-            type="text"
-            placeholder="Paste your Link here"
-            class="bg-transparent py-1 text-black px-4 focus:outline-0 w-full border-none"
-          />{" "}
-          <button
-            className="inline-block rounded-xl border border-black bg-black px-5 md:px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-black focus:outline-none focus:ring active:text-black"
-            href="/download"
-          >
-            Download
-          </button>
+    <section>
+      <div className="mx-auto max-w-screen-xl px-4 py-20 lg:h-screen lg:items-center">
+        <div class="">
+          <h1 className="mb-2 font-title text-xl text-gray-100 md:text-4xl lg:text-6xl mt-56 text-center ">
+            A <br className="md:hidden" />
+            <span
+              id="typewriter"
+              className="relative h-20 pt-2 overflow-x-hidden whitespace-nowrap text-brand-accent"
+            >
+              {/* Placeholder for the typed text */}
+            </span>
+            <br />
+            <span className="h-20 pt-2 overflow-x-hidden whitespace-nowrap text-brand-accent">
+              QR-Code Generator
+            </span>
+          </h1>
+          <div className="mt-10 md:mt-20 flex items-center justify-between ">
+            <div className="bg-white rounded-2xl flex items-center justify-between p-1 space-x-1 w-11/12 sm:w-full mx-auto">
+              <input
+                type="text"
+                placeholder="Paste your Link here"
+                class="bg-transparent py-1 text-black px-4 focus:outline-0 w-full border-none"
+              />{" "}
+              <button
+                className="inline-block rounded-xl border border-black bg-black px-5 md:px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-black focus:outline-none focus:ring active:text-black"
+                href="/download"
+              >
+                Download
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
