@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Modal from "./Modal";
 
 export default function Hero() {
   const words = ["Speedy", "Quick", "Fast", "Swifty"];
@@ -69,12 +70,7 @@ export default function Hero() {
                 placeholder="Paste your Link here"
                 class="bg-transparent py-1 text-black px-4 focus:outline-0 w-full border-none"
               />{" "}
-              <button
-                className="inline-block rounded-xl border border-black bg-black px-5 md:px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-black focus:outline-none focus:ring active:text-black"
-                href="/download"
-              >
-                Download
-              </button>
+              <Modal />
             </div>
           </div>
         </div>
