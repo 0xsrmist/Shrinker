@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  background-color: black;
+}
 /* styles/globals.css */
 @font-face {
   font-family: "Press Start 2P", cursive;
