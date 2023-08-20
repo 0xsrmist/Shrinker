@@ -1,26 +1,15 @@
 export default function Navbar() {
   return (
-    <header className="bg-black">
-      <div className="mx-auto flex h-16 items-center gap-8 px-4 sm:px-6 lg:px-8 ">
-        <a className="block text-white" href="/">
-          <span className="font-title">Shrinker</span>
-        </a>
-
-        <div className="flex flex-1 items-center justify-end md:justify-between">
-          <nav aria-label="Global" className="hidden md:block"></nav>
-
-          <div className="flex items-center gap-4">
-            <div className="sm:flex sm:gap-4">
-              <a
-                className=" rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-black transition hover:text-gray-600/75 sm:block"
-                href="/"
-              >
-                Developer
-              </a>
-            </div>
-          </div>
+    <nav class="fixed right-4 left-4 top-8 py-2 px-4 md:right-20 md:left-20 lg:right-24 lg:left-24 z-50 flex justify-between items-center border-2 rounded-2xl backdrop-blur-md mix-blend-difference">
+      <div className="flex justify-center">
+        <h1 class="text-white font-title text-3xl md:text-center">Shrinker</h1>
+      </div>
+      <div class="text-sm md:text-lg text-white flex items-center absolute right-1/2 translate-x-1/2"></div>
+      <div class="flex items-center text-white">
+        <div class="hidden md:block">
+          <span className="text-white font-medium">Developer</span>
         </div>
       </div>
-    </header>
+    </nav>
   );
 }
