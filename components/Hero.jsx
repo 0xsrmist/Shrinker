@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Modal from "./Modal";
+import Image from "next/image";
 
 export default function Hero() {
   const words = ["Speedy", "Quick", "Fast", "Swifty"];
@@ -8,7 +9,7 @@ export default function Hero() {
 
   useEffect(() => {
     const word = words[currentWordIndex];
-    const typingInterval = 100; // Adjust typing speed if needed
+    const typingInterval = 110; // Adjust typing speed if needed
     const erasingInterval = 50; // Adjust erasing speed if needed
 
     let i = 0;
@@ -46,6 +47,12 @@ export default function Hero() {
     };
   }, [currentWordIndex]);
 
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+    console.log(inputValue);
+  };
   return (
     <section>
       <div className="mx-auto max-w-screen-xl px-4 py-20 lg:h-screen lg:items-center">
@@ -69,6 +76,8 @@ export default function Hero() {
                 type="text"
                 placeholder="Paste your Link here"
                 class="bg-transparent py-1 text-black px-4 focus:outline-0 w-full border-none"
+                value={inputValue}
+                onChange={handleInputChange}
               />{" "}
               <Modal />
             </div>
