@@ -7,6 +7,26 @@ export default function Modal({ url }) {
     url
   )}`;
 
+  const handleDownloadClick = async () => {
+    try {
+      const response = await fetch(qrCodeUrl);
+      const blob = await response.blob();
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        const base64data = reader.result;
+        const link = document.createElement("a");
+        link.href = base64data;
+        link.download = "qr_code.png";
+        link.click();
+      };
+
+      reader.readAsDataURL(blob);
+    } catch (error) {
+      console.error("Error downloading QR code:", error);
+    }
+  };
+
   return (
     <>
       <button
@@ -38,14 +58,22 @@ export default function Modal({ url }) {
                 </div>
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
-                  {/* do QR logic here. Remove the span   */}
-                  <Image
-                    src={qrCodeUrl}
-                    alt="QR Code"
-                    width={500}
-                    height={500}
-                  />
+                  {/* do QR logic here. Remove the span */}
+                  {url == "" ? (
+                    <span className="text-white mx-auto">
+                      Enter a Valid URL
+                    </span>
+                  ) : (
+                    <Image
+                      src={qrCodeUrl}
+                      alt="QR Code"
+                      width={500}
+                      height={500}
+                      className="mx-auto"
+                    />
+                  )}
                 </div>
+
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
                   <button
@@ -58,7 +86,7 @@ export default function Modal({ url }) {
                   <button
                     className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal(false)}
+                    onClick={handleDownloadClick}
                   >
                     Download QR Code
                   </button>

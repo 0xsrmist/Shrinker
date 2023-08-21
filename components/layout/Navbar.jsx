@@ -12,6 +12,7 @@ export default function Navbar() {
           <a
             href="https://twitter.com/0xsrmist"
             classNameName="text-white font-title hover:underline "
+            target="_blank"
           >
             <span className="text-sm sm:text-lg">By TPHxSRMIST🚀</span>
           </a>
