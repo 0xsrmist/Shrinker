@@ -79,7 +79,7 @@ export default function Hero() {
                 value={inputValue}
                 onChange={handleInputChange}
               />{" "}
-              <Modal />
+              <Modal url={inputValue} />
             </div>
           </div>
         </div>

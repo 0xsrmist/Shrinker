@@ -1,8 +1,12 @@
 import React from "react";
 import Image from "next/image";
 
-export default function Modal({}) {
+export default function Modal({ url }) {
   const [showModal, setShowModal] = React.useState(false);
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(
+    url
+  )}`;
+
   return (
     <>
       <button
@@ -35,13 +39,12 @@ export default function Modal({}) {
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
                   {/* do QR logic here. Remove the span   */}
-                  <p>QR goes here</p>
-                  {/* <Image 
-                  src={}
-                  alt="QR Code"
-                  width={500}
-                  height={500}
-                  /> */}
+                  <Image
+                    src={qrCodeUrl}
+                    alt="QR Code"
+                    width={500}
+                    height={500}
+                  />
                 </div>
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
